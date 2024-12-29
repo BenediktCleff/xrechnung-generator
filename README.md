@@ -132,7 +132,7 @@ interface InvoiceData {
     - Returns a `Promise`.
 
    ```javascript
-   xrechnung.writeFile('/path/to/output.xml')
+   xrechnung.writeFile('/path/to/invoice.xrechnung')
        .then(() => console.log('File written successfully.'))
        .catch(console.error);
    ```
