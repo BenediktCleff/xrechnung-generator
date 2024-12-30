@@ -1,5 +1,11 @@
 # XRechnung Generator
 
+<div>
+   <img src="https://badgen.now.sh/npm/v/xrechnung-generator" alt="Version" />
+   <img src="https://badgen.now.sh/npm/license/xrechnung-generator" alt="MIT License" />
+   <img src="https://badgen.now.sh/npm/types/xrechnung-generator" alt="Types included" />
+</div>
+
 XRechnung is a **standardized electronic invoice format** developed to comply with the **European Directive 2014/55/EU**, which mandates electronic invoicing in public procurement. It is primarily used in **Germany**, but it adheres to EU-wide guidelines for electronic invoicing.
 
 A lightweight Node.js module for creating XRechnung-compliant invoices in the UBL (Universal Business Language) format.
@@ -144,3 +150,10 @@ Contributions in the form of bug reports, feature requests, or pull requests are
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+
+## Hire Me
+
+Looking for a developer with expertise in **Node.js**? Feel free to reach out to me for freelance projects, collaborations, or full-time opportunities!
+
+Contact me [hello@pixelpal.io](mailto:hello@pixelpal.io)

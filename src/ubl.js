@@ -34,7 +34,7 @@ function generateUBLInvoiceXML(invoice) {
     xmlString += `  <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>\n`;
     xmlString += `  <cbc:DocumentCurrencyCode>${escapeXML(invoice.currency)}</cbc:DocumentCurrencyCode>\n`;
 
-    // Notizen
+    // Notes
     if (invoice.notes && invoice.notes.length > 0) {
         invoice.notes.forEach((note) => {
             xmlString += `  <cbc:Note>${escapeXML(note)}</cbc:Note>\n`;
@@ -108,7 +108,7 @@ function generateUBLInvoiceXML(invoice) {
     xmlString += `  </cac:TaxTotal>\n`;
 
     // Line items
-    invoice.lineItems.forEach((item, index) => {
+    invoice.lineItems.forEach((item) => {
         xmlString += `  <cac:InvoiceLine>\n`;
         xmlString += `    <cbc:ID>${escapeXML(item.id)}</cbc:ID>\n`;
         xmlString += `    <cbc:InvoicedQuantity>${item.quantity.toFixed(2)}</cbc:InvoicedQuantity>\n`;

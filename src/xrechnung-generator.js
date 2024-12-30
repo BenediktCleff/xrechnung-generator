@@ -43,7 +43,7 @@ class XRechnungGenerator {
     }
 
     /**
-     * Convert the XRechnung into a XML string
+     * Convert the XRechnung into an XML string
      * @return {string}
      */
     toXMLString() {

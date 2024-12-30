@@ -2,7 +2,7 @@
   "name": "xrechnung-generator",
   "description": "A lightweight Node.js module for creating XRechnung-compliant invoices in the UBL (Universal Business Language) format.",
   "author": "Benedikt Cleff (pixelpal.io)>",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "einvoice",
     "e-invoice",
