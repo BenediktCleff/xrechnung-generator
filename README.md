@@ -3,6 +3,7 @@
 <div>
    <img src="https://badgen.now.sh/npm/v/xrechnung-generator" alt="Version" />
    <img src="https://badgen.now.sh/npm/license/xrechnung-generator" alt="MIT License" />
+   <img src="https://badgen.now.sh/npm/dt/xrechnung-generator" alt="Total downloads" />
    <img src="https://badgen.now.sh/npm/types/xrechnung-generator" alt="Types included" />
 </div>
 
