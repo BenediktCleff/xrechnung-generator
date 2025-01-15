@@ -95,6 +95,12 @@ interface InvoiceData {
   paymentDetails?: { // optional
     paymentMeansCode?: string; // optional
     paymentID?: string; // optional
+    bankDetails?: { // optional
+      accountName?: string; // optional
+      iban?: string; // optional
+      bic?: string; // optional
+      bankName?: string; // optional
+    }
   };
   notes?: string[]; // optional
   lineItems: {

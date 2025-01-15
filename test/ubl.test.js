@@ -69,6 +69,16 @@ describe('generateUBLInvoiceXML', () => {
                 taxAmount: 19,
                 taxPercentage: 19,
             },
+            paymentDetails: {
+                paymentMeansCode: '31',
+                paymentID: 'PMT-123456',
+                bankDetails: {
+                    accountName: 'Supplier GmbH Account',
+                    iban: 'DE12345678901234567890',
+                    bic: 'GENODEF1S01',
+                    bankName: 'Musterbank',
+                }
+            },
             lineItems: [
                 {
                     id: 'ITEM-001',
@@ -81,6 +91,8 @@ describe('generateUBLInvoiceXML', () => {
         };
 
         const xmlResult = generateUBLInvoiceXML(invoice);
+        const xmlRegex = /^\s*(<\?xml\s+[^\s?>]+(.*?)\?>)?\s*(<([a-zA-Z_][\w.\-:]*?)\b[^>]*>(.*?)<\/\4>|<([a-zA-Z_][\w.\-:]*?)\b[^>]*\/?>)+\s*$/s;
+        expect(xmlRegex.test(xmlResult)).toBeTruthy();
 
         expect(xmlResult).toContain('<?xml version="1.0" encoding="UTF-8"?>');
         expect(xmlResult).toContain('<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"');
@@ -104,6 +116,8 @@ describe('generateUBLInvoiceXML', () => {
         expect(xmlResult).toContain('<cbc:Description>Product A</cbc:Description>');
         expect(xmlResult).toContain('<cbc:InvoicedQuantity>2.00</cbc:InvoicedQuantity>');
         expect(xmlResult).toContain('<cbc:LineExtensionAmount>100.00</cbc:LineExtensionAmount>');
+        expect(xmlResult).toContain('<cbc:Name>Supplier GmbH Account</cbc:Name>');
+        expect(xmlResult).toContain('<cbc:ID>DE12345678901234567890</cbc:ID>');
     });
 
     it('should handle optional fields correctly', () => {

@@ -50,6 +50,22 @@ function generateUBLInvoiceXML(invoice) {
         if (invoice.paymentDetails.paymentID) {
             xmlString += `    <cbc:PaymentID>${escapeXML(invoice.paymentDetails.paymentID)}</cbc:PaymentID>\n`;
         }
+        if (invoice.paymentDetails.bankDetails) {
+            xmlString += `    <cac:PayeeFinancialAccount>\n`;
+            if (invoice.paymentDetails.bankDetails.accountName) {
+                xmlString += `      <cbc:Name>${escapeXML(invoice.paymentDetails.bankDetails.accountName)}</cbc:Name>\n`;
+            }
+            if (invoice.paymentDetails.bankDetails.iban) {
+                xmlString += `      <cbc:ID>${escapeXML(invoice.paymentDetails.bankDetails.iban)}</cbc:ID>\n`;
+            }
+            if (invoice.paymentDetails.bankDetails.bic) {
+                xmlString += `      <cbc:SchemeID>${escapeXML(invoice.paymentDetails.bankDetails.bic)}</cbc:SchemeID>\n`;
+            }
+            if (invoice.paymentDetails.bankDetails.bankName) {
+                xmlString += `      <cbc:BankName>${escapeXML(invoice.paymentDetails.bankDetails.bankName)}</cbc:BankName>\n`;
+            }
+            xmlString += `    </cac:PayeeFinancialAccount>\n`;
+        }
         xmlString += `  </cac:PaymentMeans>\n`;
     }
 
